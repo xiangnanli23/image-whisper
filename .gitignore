@@ -43,3 +43,7 @@ yarn-error.log*
 
 # OS metadata
 .DS_Store
+
+# Local integration reviews
+.adapter-reviews/
+!.dev.vars.example

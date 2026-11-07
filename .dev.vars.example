@@ -1,0 +1,4 @@
+# Copy to .dev.vars and fill in your own server credentials. Never commit real tokens.
+GEMINI_PROXY_KEY=
+TOOLKIT_URL=https://toolkit-service-774429076434.us-central1.run.app
+TOOLKIT_TOKEN=

@@ -1,6 +1,6 @@
 {
-  "name": "site-creator-vinext-starter",
-  "version": "0.1.0",
+  "name": "image-whisper",
+  "version": "0.2.0",
   "private": true,
   "engines": {
     "node": ">=22.13.0"
@@ -37,7 +37,8 @@
     "sonner": "^2.0.8",
     "tailwind-merge": "3.6.0",
     "vaul": "^1.1.2",
-    "zod": "^3.25.76"
+    "zod": "^3.25.76",
+    "@ai4a11y/toolkit": "file:vendor/ai4a11y-toolkit-0.1.0.tgz"
   },
   "devDependencies": {
     "@cloudflare/vite-plugin": "1.37.1",

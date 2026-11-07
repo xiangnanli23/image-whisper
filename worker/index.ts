@@ -1,3 +1,4 @@
+import { toolkitRequest } from "../lib/toolkit-proxy";
 import { describeRequest } from "../lib/describe";
 import handler from "vinext/server/fetch-handler";
 import { runWithConnectorBinding } from "../lib/connector-context";
@@ -5,6 +6,7 @@ import type { ConnectorBinding } from "../lib/connector-contract.mjs";
 
 const worker = {
   fetch(request: Request, env: Cloudflare.Env, ctx: ExecutionContext<{ CONNECTORS?: ConnectorBinding }>) {
+    if (new URL(request.url).pathname.startsWith("/api/toolkit/")) return toolkitRequest(request, env as Cloudflare.Env & {TOOLKIT_URL?: string;TOOLKIT_TOKEN?: string});
     if (new URL(request.url).pathname === "/api/describe") return describeRequest(request, (env as Cloudflare.Env & {GEMINI_PROXY_KEY?: string}).GEMINI_PROXY_KEY);
     let binding = ctx.props?.CONNECTORS;
     // Local preview emulates the same request-scoped capability. This branch and
